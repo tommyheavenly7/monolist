@@ -1,9 +1,13 @@
 source 'https://rubygems.org'
 
+# Specify Ruby version
+ruby "2.2.3"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', group: :development
+#gem 'sqlite3', group: :development
+# Use postgres in Heroku env.
+#gem 'pg', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -54,5 +58,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'pry-rails'
-end
 
+  # Use mysql as the database for Active Record
+  gem 'mysql2', '~> 0.3.18'
+end

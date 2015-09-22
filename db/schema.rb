@@ -14,49 +14,49 @@
 ActiveRecord::Schema.define(version: 20150708042943) do
 
   create_table "items", force: :cascade do |t|
-    t.string   "asin"
-    t.string   "title"
-    t.string   "description"
-    t.string   "detail_page_url"
-    t.string   "small_image"
-    t.string   "medium_image"
-    t.string   "large_image"
-    t.string   "raw_info"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "asin",            limit: 255
+    t.string   "title",           limit: 255
+    t.string   "description",     limit: 255
+    t.string   "detail_page_url", limit: 255
+    t.string   "small_image",     limit: 255
+    t.string   "medium_image",    limit: 255
+    t.string   "large_image",     limit: 255
+    t.string   "raw_info",        limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
-  add_index "items", ["asin"], name: "index_items_on_asin", unique: true
+  add_index "items", ["asin"], name: "index_items_on_asin", unique: true, using: :btree
 
   create_table "ownerships", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "item_id"
-    t.string   "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",    limit: 4
+    t.integer  "item_id",    limit: 4
+    t.string   "type",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  add_index "ownerships", ["item_id"], name: "index_ownerships_on_item_id"
-  add_index "ownerships", ["user_id", "item_id", "type"], name: "index_ownerships_on_user_id_and_item_id_and_type", unique: true
-  add_index "ownerships", ["user_id"], name: "index_ownerships_on_user_id"
+  add_index "ownerships", ["item_id"], name: "index_ownerships_on_item_id", using: :btree
+  add_index "ownerships", ["user_id", "item_id", "type"], name: "index_ownerships_on_user_id_and_item_id_and_type", unique: true, using: :btree
+  add_index "ownerships", ["user_id"], name: "index_ownerships_on_user_id", using: :btree
 
   create_table "relationships", force: :cascade do |t|
-    t.integer  "follower_id"
-    t.integer  "followed_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "follower_id", limit: 4
+    t.integer  "followed_id", limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
-  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
-  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
-  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "name",            limit: 255
+    t.string   "email",           limit: 255
+    t.string   "password_digest", limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end
