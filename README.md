@@ -55,6 +55,13 @@ $ rake db:migrate
 # SQL for skipping the migration
 > insert into schema_migrations (version) values ('20150919132850');
 ```
+#### alter table
+```
+$ rails generate migration change_detail_page_url_format_in_items
+```
+  - [Difference between string and text in rails?](http://stackoverflow.com/questions/3354330/difference-between-string-and-text-in-rails)
+  - [Change a column type from Date to DateTime during ROR migration](http://stackoverflow.com/questions/5191405/change-a-column-type-from-date-to-datetime-during-ror-migration)
+
 #### routes
 ```
 $ rake routes --trace

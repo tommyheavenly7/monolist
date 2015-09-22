@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708042943) do
+ActiveRecord::Schema.define(version: 20150922181700) do
 
   create_table "items", force: :cascade do |t|
     t.string   "asin",            limit: 255
     t.string   "title",           limit: 255
     t.string   "description",     limit: 255
-    t.string   "detail_page_url", limit: 255
+    t.text     "detail_page_url", limit: 65535
     t.string   "small_image",     limit: 255
     t.string   "medium_image",    limit: 255
     t.string   "large_image",     limit: 255
     t.string   "raw_info",        limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   add_index "items", ["asin"], name: "index_items_on_asin", unique: true, using: :btree
