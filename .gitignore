@@ -32,3 +32,6 @@ bower.json
 .powenv
 
 .DS_Store
+
+# private command
+/bin/boot_server
