@@ -39,6 +39,8 @@ $ sudo /etc/init.d/vboxadd setup
 ### heroku
 ```
 $ heroku run rake db:migrate --app monolist-th7
+$ heroku restart --app monolist-th7
+$ heroku logs --tail --app monolist-th7
 ```
 ### rails
 #### create a new project
@@ -96,3 +98,4 @@ binding.pry
   - [Ruby on Rails Guides (v4.2.4)](http://guides.rubyonrails.org/)
   - [Active Record Validations - Using a Symbol with :if and :unless](http://guides.rubyonrails.org/active_record_validations.html#using-a-symbol-with-if-and-unless)
   - [Active Record Migrations - Creating a Migration](http://guides.rubyonrails.org/active_record_migrations.html#creating-a-migration)
+  - [Logging | Heroku Dev Center](https://devcenter.heroku.com/articles/logging)
