@@ -58,6 +58,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'pry-rails'
+  gem 'pry-nav'
 
   # Use mysql as the database for Active Record
   gem 'mysql2', '~> 0.3.18'

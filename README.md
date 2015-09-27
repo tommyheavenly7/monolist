@@ -56,11 +56,20 @@ $ rake db:migrate
 > insert into schema_migrations (version) values ('20150919132850');
 ```
 #### alter table
+> If the migration name is of the form "AddXXXToYYY" or "RemoveXXXFromYYY" and is followed by a list of column names and types then a migration containing the appropriate add_column and remove_column statements will be created.
+
 ```
 $ rails generate migration change_detail_page_url_format_in_items
+$ rails generate migration change_raw_info_format_in_items
+$ rake db:migrate
 ```
   - [Difference between string and text in rails?](http://stackoverflow.com/questions/3354330/difference-between-string-and-text-in-rails)
   - [Change a column type from Date to DateTime during ROR migration](http://stackoverflow.com/questions/5191405/change-a-column-type-from-date-to-datetime-during-ror-migration)
+
+#### create controller
+```
+$ rails generate controller want
+```
 
 #### routes
 ```
@@ -70,7 +79,8 @@ $ rake routes --trace
 
 #### boot the rails server
 ```
-$ rails s -p 3000 -b lancelot.vm
+# $ rails s -p 3000 -b lancelot.vm
+$ bin/boot_server
 ```
 ### debugging
 ```
@@ -79,7 +89,9 @@ binding.pry
 ### bootstrap
   - [twbs/bootstrap-sass](https://github.com/twbs/bootstrap-sass)
 
-### references
+## references
+  - [AWS: Product Advertising API](http://docs.aws.amazon.com/AWSECommerceService/latest/DG/Welcome.html)
+  - [jugend/amazon-ecs](https://github.com/jugend/amazon-ecs)
   - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#blockquotes)
   - [Ruby on Rails Guides (v4.2.4)](http://guides.rubyonrails.org/)
   - [Active Record Validations - Using a Symbol with :if and :unless](http://guides.rubyonrails.org/active_record_validations.html#using-a-symbol-with-if-and-unless)

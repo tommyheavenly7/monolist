@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922181700) do
+ActiveRecord::Schema.define(version: 20150926072439) do
 
   create_table "items", force: :cascade do |t|
     t.string   "asin",            limit: 255
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20150922181700) do
     t.string   "small_image",     limit: 255
     t.string   "medium_image",    limit: 255
     t.string   "large_image",     limit: 255
-    t.string   "raw_info",        limit: 255
+    t.text     "raw_info",        limit: 65535
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
