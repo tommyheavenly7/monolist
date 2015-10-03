@@ -1,0 +1,9 @@
+<% content_for :head do %>
+  <%= content_tag( :title, "Haveランキング - monolist" ) %>
+  <%= tag( "meta", name: "description",
+        content: "多くの人が持ってるモノ、上位10点を表示しています。"
+      ) %>
+<% end %>
+
+<h2 class="page-heading">Haveランキング</h2>
+<%= render partial: 'rankings/list_item', locals: {rank_in_items: @rank_in_items, context: @context} %>

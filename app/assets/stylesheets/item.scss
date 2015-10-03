@@ -54,6 +54,63 @@
     }
   }
 }
+.item-box-wrapper {
+  width: 270px;
+  margin: 15px;
+  float: left;
+  .item-profile {
+    width: auto;
+    height: 27px;
+    padding: 5px 10px;
+  }
+  .item-box.ranking {
+    width: 270px;
+    //margin: 15px 15px 0 15px;
+    margin: 0;
+    padding:0;
+    float: none;
+  }
+  .img-wrap:before {
+    content: '';
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    right: 5px;
+    bottom: 60px;
+    z-index: 1;
+  }
+}
+.item-box-wrapper:nth-child(1) .img-wrap:before{
+  background-image: url(ranking_badges_01.png);
+}
+.item-box-wrapper:nth-child(2) .img-wrap:before{
+  background-image: url(ranking_badges_02.png);
+}
+.item-box-wrapper:nth-child(3) .img-wrap:before{
+  background-image: url(ranking_badges_03.png);
+}
+.item-box-wrapper:nth-child(4) .img-wrap:before{
+  background-image: url(ranking_badges_04.png);
+}
+.item-box-wrapper:nth-child(5) .img-wrap:before{
+  background-image: url(ranking_badges_05.png);
+}
+.item-box-wrapper:nth-child(6) .img-wrap:before{
+  background-image: url(ranking_badges_06.png);
+}
+.item-box-wrapper:nth-child(7) .img-wrap:before{
+  background-image: url(ranking_badges_07.png);
+}
+.item-box-wrapper:nth-child(8) .img-wrap:before{
+  background-image: url(ranking_badges_08.png);
+}
+.item-box-wrapper:nth-child(9) .img-wrap:before{
+  background-image: url(ranking_badges_09.png);
+}
+.item-box-wrapper:nth-child(10) .img-wrap:before{
+  background-image: url(ranking_badges_10.png);
+}
+
 .item-single-main {
   width: 400px;
   margin: 0 auto;
