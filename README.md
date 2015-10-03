@@ -53,6 +53,7 @@ You need to edit *config/database.yml* in advance.
 ```
 $ rake db:create
 $ rake db:migrate
+$ rake db:seed
 
 # SQL for skipping the migration
 > insert into schema_migrations (version) values ('20150919132850');
