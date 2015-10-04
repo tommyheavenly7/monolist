@@ -1,4 +1,9 @@
+<% content_for :head do %>
+  <%= content_tag( :title, "#{@user.name} - monolist" ) %>
+  <%= tag( "meta", name: "description",
+        content: "#{@user.name}のモノページ。#{@user.name}の欲しいモノ、持ってるモノを表示しています。"
+      ) %>
+<% end %>
+
 <%= render 'profile' , user: @user %>
-
-
 <%= render 'items/list' , items: @items %>
